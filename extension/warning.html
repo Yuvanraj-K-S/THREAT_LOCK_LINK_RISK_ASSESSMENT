@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Security Warning</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      font-family: 'Poppins', sans-serif;
+      background: radial-gradient(circle at top left, #ff3b3b, #960018);
+      overflow: hidden;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Animated glowing circles */
+    .background-glow {
+      position: fixed;
+      width: 100vw;
+      height: 100vh;
+      top: 0; left: 0;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .glow-circle {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.6;
+      animation-timing-function: ease-in-out;
+      animation-iteration-count: infinite;
+      animation-direction: alternate;
+    }
+
+    .glow-1 {
+      width: 300px;
+      height: 300px;
+      background: #ff4f4f;
+      top: 10%;
+      left: 10%;
+      animation-name: move1;
+      animation-duration: 10s;
+    }
+
+    .glow-2 {
+      width: 400px;
+      height: 400px;
+      background: #ff6666;
+      top: 60%;
+      left: 70%;
+      animation-name: move2;
+      animation-duration: 12s;
+    }
+
+    .glow-3 {
+      width: 350px;
+      height: 350px;
+      background: #ff1a1a;
+      top: 40%;
+      left: 35%;
+      animation-name: move3;
+      animation-duration: 15s;
+    }
+
+    @keyframes move1 {
+      0%   { transform: translate(0, 0) scale(1);}
+      100% { transform: translate(15px, 30px) scale(1.1);}
+    }
+    @keyframes move2 {
+      0%   { transform: translate(0, 0) scale(1);}
+      100% { transform: translate(-20px, -25px) scale(1.05);}
+    }
+    @keyframes move3 {
+      0%   { transform: translate(0, 0) scale(1);}
+      100% { transform: translate(10px, -15px) scale(1.08);}
+    }
+
+    /* Content container */
+    .container {
+      background: rgba(0,0,0,0.75);
+      max-width: 380px;
+      border-radius: 20px;
+      padding: 2.5rem 2rem;
+      z-index: 1;
+      box-shadow:
+        0 0 30px #ff3b3b,
+        inset 0 0 20px #ff3b3b;
+    }
+
+    /* Icon circle */
+    .icon-circle {
+      font-size: 5rem;
+      background: #ff2929;
+      width: 100px;
+      height: 100px;
+      line-height: 100px;
+      margin: 0 auto 1.4rem auto;
+      border-radius: 50%;
+      box-shadow:
+        0 0 20px #ff2929,
+        inset 0 0 20px #ff0000;
+      animation: pulseIcon 1.8s ease-in-out infinite;
+      user-select: none;
+    }
+
+    @keyframes pulseIcon {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow:
+          0 0 20px #ff2929,
+          inset 0 0 20px #ff0000;
+      }
+      50% {
+        transform: scale(1.1);
+        box-shadow:
+          0 0 40px #ff6161,
+          inset 0 0 40px #ff3b3b;
+      }
+    }
+
+    h1 {
+      font-weight: 700;
+      font-size: 1.9rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.04em;
+      text-shadow: 0 0 8px #ff2a2a;
+      user-select: none;
+    }
+
+    p {
+      font-weight: 500;
+      font-size: 1rem;
+      color: #ffb4b4;
+      user-select: none;
+      line-height: 1.4;
+      margin-top: 0.6rem;
+    }
+
+    /* Responsive Adjust */
+    @media(max-width: 400px) {
+      .container {
+        width: 100%;
+        padding: 2rem 1.6rem;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      p {
+        font-size: 0.9rem;
+      }
+      .icon-circle {
+        width: 80px;
+        height: 80px;
+        line-height: 80px;
+        font-size: 4rem;
+        margin-bottom: 1rem;
+      }
+    }
+
+  </style>
+</head>
+<body>
+  <div class="background-glow" aria-hidden="true">
+    <div class="glow-circle glow-1"></div>
+    <div class="glow-circle glow-2"></div>
+    <div class="glow-circle glow-3"></div>
+  </div>
+
+  <main class="container" role="alert" aria-labelledby="warning-title" aria-describedby="warning-desc">
+    <div class="icon-circle" aria-hidden="true">⚠️</div>
+    <h1 id="warning-title">Warning: Potentially Malicious Link</h1>
+    <p id="warning-desc">
+      You are attempting to visit a link that may be unsafe or harmful. Please exercise caution. If you do not recognize the source, it is best to avoid continuing.
+    </p>
+  </main>
+</body>
+</html>
+
