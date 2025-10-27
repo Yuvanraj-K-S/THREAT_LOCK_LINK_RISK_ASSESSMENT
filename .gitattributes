@@ -1,0 +1,57 @@
+# Auto detect text files and normalize line endings to LF
+* text=auto eol=lf
+
+# Force line endings to LF for these file types
+*.sh text eol=lf
+*.py text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.js text eol=lf
+*.ts text eol=lf
+*.jsx text eol=lf
+*.tsx text eol=lf
+
+# Binary files that should not be modified
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.pdf binary
+*.zip binary
+*.gz binary
+*.tar binary
+*.exe binary
+*.dll binary
+*.so binary
+*.dylib binary
+*.pyd binary
+*.pyc binary
+*.pyo binary
+
+# Force Windows line endings for these files (if needed)
+# *.bat text eol=crlf
+# *.cmd text eol=crlf
+# *.ps1 text eol=crlf
+
+# Don't diff binary files
+*.pdf -diff
+*.png -diff
+*.jpg -diff
+*.jpeg -diff
+*.gif -diff
+*.ico -diff
+*.zip -diff
+*.gz -diff
+*.tar -diff
+*.exe -diff
+*.dll -diff
+*.so -diff
+*.dylib -diff
+*.pyd -diff
+*.pyc -diff
+*.pyo -diff
