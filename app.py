@@ -8,11 +8,11 @@ import re
 
 print("Loading model...")
 # Load model
-model = load_model(r"E:\Threat_lock_link_risk_assessment\outputs\deep_url_classifier.h5")
+model = load_model(r"deep_url_classifier.h5")
 print("Model loaded.")
 print("Loading tokenizer...")
 # Load tokenizer
-with open(r"E:\Threat_lock_link_risk_assessment\outputs\url_tokenizer.pkl", "rb") as f:
+with open(r"url_tokenizer.pkl", "rb") as f:
     tokenizer = pickle.load(f)
 print("Tokenizer loaded.")
 # Must match the max_len used during training
